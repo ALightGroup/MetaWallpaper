@@ -1,15 +1,28 @@
 pluginManagement {
     repositories {
+        mavenLocal()
+
         google()
         mavenCentral()
         gradlePluginPortal()
     }
 }
+
+enableFeaturePreview('VERSION_CATALOGS')
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        mavenLocal()
+
         google()
         mavenCentral()
+    }
+
+    versionCatalogs {
+        libs {
+            from("com.alg.plugin.version:catalog:0.0.1")
+        }
     }
 }
 rootProject.name = "MetaWallpaper"
